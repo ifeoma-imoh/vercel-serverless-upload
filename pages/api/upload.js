@@ -20,7 +20,7 @@ function runMiddleware(req, res, fn) {
     fn(req, res, (result) => {
       if (result instanceof Error) {
         return reject(result);
-      }
+      } 
       return resolve(result);
     });
   });

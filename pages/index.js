@@ -25,7 +25,6 @@ export default function Home() {
     const data = await res.json();
     setImgUrl(data.secure_url);
     setUploadState(UploadState.UPLOADED);
-    alert("Your Image has been uploaded to Cloudinary");
   }
 
   return (
@@ -51,7 +50,10 @@ export default function Home() {
           </label>
         </div>
       ) : (
-        <div className="w-96">
+        <div className="w-96 text-green-500 ">
+          <span className="block py-2 px-3 text-green-500 text-center">
+            Uploaded!
+          </span>
           <img className="w-full" src={imgUrl} alt="Uploaded image" />
         </div>
       )}
